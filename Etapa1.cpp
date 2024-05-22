@@ -3,6 +3,8 @@
 #define TP36_SENSOR_CHANNEL 0
 #define ADC_REF_VOLTAGE 5.0
 
+
+
 void init_ADC()
 {
   ADMUX |= (1 << REFS0);
@@ -24,8 +26,8 @@ float read_temp()
 void setup()
 {
   init_ADC();
-  pinMode(0,OUTPUT);
-  digitalWrite(0, LOW);
+  pinMode(2,OUTPUT);
+  digitalWrite(2, LOW);
   Serial.begin(9600);
 }
 
@@ -40,13 +42,13 @@ void loop()
   char receivedChar = Serial.read();
   if (receivedChar == 'A')
   {
-    digitalWrite(0, HIGH);
+    digitalWrite(2, HIGH);
   }
     else
     {
       if (receivedChar == 'S')
       {
-        digitalWrite(0, LOW);
+        digitalWrite(2, LOW);
       }
     }
   }
