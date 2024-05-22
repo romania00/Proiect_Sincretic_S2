@@ -11,7 +11,12 @@
 <td></td>
 </tr>
 <table>
-<button>Turn LED on</button>
-<button>Turn LED off</button>
+<button onclick="LedFunc(Led,'A')">Turn LED on</button>
+<button onclick="LedFunc(Led,'S')">Turn LED off</button>
+<script>
+    function LedFunc(val,state) {
+      val.onoff = state;
+    }
+    </script>
 </body>
 </html>
